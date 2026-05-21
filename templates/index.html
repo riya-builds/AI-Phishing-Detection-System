@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>AI Phishing Detection System</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AI Phishing Detection System</h1>
+
+        <p>
+            Enter a suspicious message or email below
+        </p>
+
+        <form method="POST">
+
+            <textarea
+            name="message"
+            rows="10"
+            placeholder="Paste suspicious message here..."></textarea>
+
+            <br>
+
+            <button type="submit">
+                Analyze Message
+            </button>
+
+        </form>
+
+        <h2>{{ prediction }}</h2>
+
+    </div>
+
+</body>
+</html>
