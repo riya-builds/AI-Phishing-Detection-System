@@ -8,9 +8,9 @@ data = pd.read_csv(
 
 print(data.head())
 
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 
-vectorizer = TfidfVectorizer()
+vectorizer = CountVectorizer()
 
 X = vectorizer.fit_transform(data['message'])
 
@@ -52,25 +52,3 @@ y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 
 print("Accuracy:", accuracy)
-
-sample_message = [
-    "Congratulations! You won a free iPhone. Click now!"
-]
-
-sample_message = [
-    "Hello Riya, let's meet tomorrow"
-]
-
-sample_data = vectorizer.transform(sample_message)
-
-prediction = model.predict(sample_data)
-
-print(prediction)
-
-import joblib
-
-joblib.dump(model, 'model.pkl')
-
-joblib.dump(vectorizer, 'vectorizer.pkl')
-
-print("Model and Vectorizer Saved")
