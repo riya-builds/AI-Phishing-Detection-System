@@ -14,6 +14,7 @@ vectorizer = joblib.load("vectorizer.pkl")
 # ---------------- HOME PAGE ----------------
 @app.route('/')
 def home():
+
     return render_template('index.html')
 
 # ---------------- PREDICTION ----------------
@@ -23,7 +24,7 @@ def predict():
     # Get user message
     user_message = request.form['message']
 
-    # ---------------- URL / PHISHING CHECK ----------------
+    # ---------------- ADVANCED PHISHING PATTERNS ----------------
 
     suspicious_patterns = [
 
@@ -39,9 +40,21 @@ def predict():
         r"password",
         r"paypal",
         r"free",
-        r"urgent"
+        r"urgent",
+
+        # Suspicious TLDs
+        r"\.xyz",
+        r"\.top",
+        r"\.club",
+        r"\.online",
+        r"\.site",
+
+        # IP-based URLs
+        r"http[s]?://\d+\.\d+\.\d+\.\d+",
 
     ]
+
+    # ---------------- URL FLAG ----------------
 
     url_flag = False
 
@@ -51,6 +64,16 @@ def predict():
 
             url_flag = True
             break
+
+    # ---------------- SUBDOMAIN DETECTION ----------------
+
+    subdomain_flag = False
+
+    dots = user_message.count('.')
+
+    if dots >= 4:
+
+        subdomain_flag = True
 
     # ---------------- ML PREDICTION ----------------
 
@@ -65,7 +88,7 @@ def predict():
 
     # ---------------- FINAL DECISION ----------------
 
-    if result == 1 or url_flag:
+    if result == 1 or url_flag or subdomain_flag:
 
         prediction = (
             f"⚠️ Phishing Detected "
@@ -100,6 +123,8 @@ def predict():
 
     connection.close()
 
+    # ---------------- RETURN RESULT ----------------
+
     return render_template(
         'index.html',
         prediction_text=prediction
@@ -123,14 +148,42 @@ def history():
 
     rows = cursor.fetchall()
 
+    # ---------------- ANALYTICS ----------------
+
+    total_predictions = len(rows)
+
+    phishing_count = 0
+    safe_count = 0
+
+    for row in rows:
+
+        result = row[2]
+
+        if "Phishing" in result:
+
+            phishing_count += 1
+
+        else:
+
+            safe_count += 1
+
     connection.close()
 
     return render_template(
+
         'history.html',
-        rows=rows
+
+        rows=rows,
+
+        total_predictions=total_predictions,
+
+        phishing_count=phishing_count,
+
+        safe_count=safe_count
     )
 
 # ---------------- RUN APP ----------------
+
 if __name__ == "__main__":
 
     port = int(os.environ.get("PORT", 5000))

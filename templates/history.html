@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Prediction History</title>
+    <title>Analytics Dashboard</title>
 
     <style>
 
@@ -31,6 +31,48 @@
             color: #38bdf8;
 
             margin-bottom: 30px;
+        }
+
+        .cards {
+
+            display: flex;
+
+            gap: 20px;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 40px;
+        }
+
+        .card {
+
+            background: #1e293b;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            width: 250px;
+
+            text-align: center;
+
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+        }
+
+        .card h2 {
+
+            margin: 0;
+
+            color: #38bdf8;
+        }
+
+        .card p {
+
+            font-size: 30px;
+
+            margin-top: 15px;
         }
 
         table {
@@ -67,7 +109,39 @@
 
 <body>
 
-    <h1>📜 Prediction History</h1>
+    <h1>📊 Phishing Analytics Dashboard</h1>
+
+    <!-- ANALYTICS CARDS -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h2>Total Predictions</h2>
+
+            <p>{{ total_predictions }}</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Phishing Detected</h2>
+
+            <p>{{ phishing_count }}</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Safe Messages</h2>
+
+            <p>{{ safe_count }}</p>
+
+        </div>
+
+    </div>
+
+    <!-- HISTORY TABLE -->
 
     <table>
 
