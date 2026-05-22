@@ -1,89 +1,152 @@
-# AI Phishing Detection System
+# 🛡 AI Phishing Detection System
 
-An AI-powered phishing message detection web application built using Flask, Machine Learning, and SQLite.
+An AI-powered phishing detection web application built using Python, Flask, Machine Learning, and SQLite.
 
----
-
-## Features
-
-- Detects phishing/spam messages using Machine Learning
-- TF-IDF vectorization for text processing
-- Naive Bayes classification model
-- Modern responsive UI
-- Stores prediction history using SQLite database
-- Real-time message analysis
+The system detects phishing and suspicious messages using:
+- Machine Learning classification
+- URL pattern analysis
+- Hybrid phishing detection logic
+- Confidence score prediction
 
 ---
 
-## Technologies Used
+# 🚀 Live Demo
 
-- Python
-- Flask
-- Scikit-learn
-- Pandas
-- SQLite
+Deployed on Render:
+
+https://ai-phishing-detection-system-1-4ckt.onrender.com
+
+---
+
+# 📌 Features
+
+✅ AI-based phishing message detection  
+✅ URL phishing detection  
+✅ Confidence score prediction  
+✅ Professional cybersecurity dashboard UI  
+✅ Prediction history system  
+✅ SQLite database integration  
+✅ Real-time Flask web application  
+✅ Render cloud deployment  
+
+---
+
+# 🧠 Machine Learning
+
+The project uses:
+
+- CountVectorizer
+- Multinomial Naive Bayes
+- Custom phishing dataset augmentation
+
+Dataset:
+- SMS Spam Collection Dataset
+- Additional phishing-oriented custom samples
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
 - HTML
 - CSS
 
+## Backend
+- Flask
+- Python
+
+## Machine Learning
+- Scikit-learn
+- Pandas
+- NumPy
+
+## Database
+- SQLite
+
+## Deployment
+- Render
+- GitHub
+
 ---
 
-## Machine Learning Workflow
-
-1. Dataset Collection
-2. Text Preprocessing
-3. TF-IDF Vectorization
-4. Naive Bayes Model Training
-5. Prediction Generation
-
----
-
-## Project Structure
+# 📂 Project Structure
 
 ```bash
 AI-Phishing-Detector/
 │
-├── dataset/
-├── static/
-├── templates/
-├── venv/
 ├── app.py
 ├── train_model.py
+├── database.py
 ├── model.pkl
 ├── vectorizer.pkl
-├── phishing.db
+├── predictions.db
 ├── requirements.txt
+│
+├── dataset/
+│   └── sms.tsv
+│
+├── templates/
+│   ├── index.html
+│   └── history.html
+│
 └── README.md
 ```
 
 ---
 
-## Installation
+# ⚙ Installation
 
-### Clone Repository
+## Clone Repository
 
 ```bash
-git clone <repository-link>
+git clone https://github.com/riya-builds/AI-Phishing-Detection-System.git
 ```
 
-### Create Virtual Environment
+---
+
+## Create Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-### Activate Virtual Environment
+---
+
+## Activate Virtual Environment
+
+### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-### Install Dependencies
+---
+
+## Install Requirements
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run Application
+---
+
+## Train Model
+
+```bash
+python train_model.py
+```
+
+---
+
+## Create Database
+
+```bash
+python database.py
+```
+
+---
+
+## Run Flask App
 
 ```bash
 python app.py
@@ -91,16 +154,27 @@ python app.py
 
 ---
 
-## Future Improvements
+# 🌐 Open in Browser
 
-- Deep Learning integration
-- URL-based phishing detection
-- Email header analysis
-- User authentication system
-- Cloud deployment
+```bash
+http://127.0.0.1:5000
+```
 
 ---
 
-## Author
+# 📊 Future Improvements
+
+- TF-IDF Vectorizer
+- Deep Learning Models
+- Real URL Reputation APIs
+- Threat Intelligence Integration
+- Docker Deployment
+- User Authentication
+- Analytics Dashboard
+
+---
+
+# 👩‍💻 Author
 
 Riya Kumari
+B.Tech CSE(Cybersecurity) Student
