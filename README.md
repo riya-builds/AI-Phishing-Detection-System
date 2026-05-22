@@ -105,15 +105,24 @@ AI-Phishing-Detector/
 ├── vectorizer.pkl
 ├── predictions.db
 ├── requirements.txt
+├── Procfile
+├── runtime.txt
+├── README.md
 │
 ├── dataset/
 │   └── sms.tsv
+│
+├── screenshots/
+│   ├── dashboard.png
+│   ├── phishing.png
+│   ├── safe.png
+│   └── history.png
 │
 ├── templates/
 │   ├── index.html
 │   └── history.html
 │
-└── README.md
+└── venv/
 ```
 
 ---
@@ -181,7 +190,7 @@ python app.py
 # 🌐 Open in Browser
 
 ```bash
-http://127.0.0.1:5000
+http://192.168.1.116:5000
 ```
 
 ---
