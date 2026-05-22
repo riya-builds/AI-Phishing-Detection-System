@@ -31,6 +31,30 @@ https://ai-phishing-detection-system-1-4ckt.onrender.com
 
 ---
 
+# 📸 Screenshots
+
+## Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+## Phishing Detection
+
+![Phishing Detection](screenshots/phishing.png)
+
+---
+
+## Safe Message Detection
+
+![Safe Detection](screenshots/safe.png)
+
+---
+
+## Prediction History
+
+![History](screenshots/history.png)
+
 # 🧠 Machine Learning
 
 The project uses:
