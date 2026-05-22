@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction History</title>
+
+    <style>
+
+        body {
+
+            background: #0f172a;
+
+            color: white;
+
+            font-family: Arial;
+
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+
+            text-align: center;
+
+            color: #38bdf8;
+
+            margin-bottom: 30px;
+        }
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            background: #1e293b;
+        }
+
+        th, td {
+
+            border: 1px solid #334155;
+
+            padding: 15px;
+
+            text-align: left;
+        }
+
+        th {
+
+            background: #0284c7;
+        }
+
+        tr:nth-child(even) {
+
+            background: #334155;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>📜 Prediction History</h1>
+
+    <table>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Message</th>
+            <th>Result</th>
+
+        </tr>
+
+        {% for row in rows %}
+
+        <tr>
+
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+
+</html>
